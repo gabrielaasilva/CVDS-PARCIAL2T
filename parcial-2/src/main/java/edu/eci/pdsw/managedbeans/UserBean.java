@@ -33,13 +33,18 @@ import edu.eci.pdsw.services.ServicesException;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "userBean")
 @SessionScoped
-public class UserBean extends BasePageBean {
 
-	/**
-	 * 
-	 */
+
+
+public class UserBean extends BasePageBean {
+    User usuario;
 	private static final long serialVersionUID = 3594009161252782831L;
-	
+	String login = User.getLogin();
+
+	public String getLogin(){
+	    return login;
+    }
+
 	@Inject
 	private BlogServices blogServices;
 
@@ -52,6 +57,17 @@ public class UserBean extends BasePageBean {
         }
         
     }
+
+    public User getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario (User usuario){
+        this.usuario = usuario;
+    }
+
+
+
 
     
 }

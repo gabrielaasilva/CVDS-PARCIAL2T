@@ -44,7 +44,7 @@ public interface BlogServices {
      * @return la lista de comentarios
      * @throws ServicesException 
      */
-    public List<Comment> searchCommentsByBlogTitle(String title) throws ServicesException;
+    public List<User> searchCommentsByBlogTitle(String title) throws ServicesException;
 
 
     /**

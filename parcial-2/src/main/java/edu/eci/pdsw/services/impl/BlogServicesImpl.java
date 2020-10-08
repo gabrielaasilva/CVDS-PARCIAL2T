@@ -42,7 +42,8 @@ public class BlogServicesImpl implements BlogServices {
     @Override
 	public List<User> listUsers() throws ServicesException {
 		try {
-            return userDAO.loadAll();
+			String title = null;
+			return userDAO.loadAll(title);
         } catch (PersistenceException ex) {
             throw new ServicesException("Load users error:"+ex.getLocalizedMessage(), ex);
         }
@@ -63,8 +64,12 @@ public class BlogServicesImpl implements BlogServices {
     }
 
 	@Override
-	public List<Comment> searchCommentsByBlogTitle(String title) throws ServicesException {
-		throw new UnsupportedOperationException("Not supported yet.");
+	public List<User> searchCommentsByBlogTitle(String title) throws ServicesException {
+		try {
+			return userDAO.loadAll(title);
+		}catch (PersistenceException e){
+			throw new ServicesException("Error al realizar la consulta:"+e.getLocalizedMessage(), e);
+		}
 	}
 
 	@Override

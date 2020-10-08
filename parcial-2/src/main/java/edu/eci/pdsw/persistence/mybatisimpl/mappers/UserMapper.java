@@ -32,9 +32,8 @@ import edu.eci.pdsw.entities.User;
 public interface UserMapper {
 
 	public void insertUser(User user);
-	
     public List<User> getUsers();
-    
+    public User getUser(@Param("nameUsuario") String name, @Param("lastnameUsuario") String lastname, @Param("login") String login);
     public void deleteAll();
 
 }

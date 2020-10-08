@@ -1,7 +1,9 @@
 package edu.eci.pdsw.entities;
 
+import java.util.List;
+
 public class User {
-	private String login;
+	private static String login;
 	private String name;
 	private String lastName;
 	
@@ -12,9 +14,10 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getLogin() {
+	public static String getLogin() {
 		return login;
 	}
+
 
 	public void setLogin(String login) {
 		this.login = login;

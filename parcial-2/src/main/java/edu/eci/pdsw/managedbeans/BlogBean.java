@@ -77,4 +77,9 @@ public class BlogBean extends BasePageBean {
 		this.user = user;
 	}
 
-}
+
+	}
+
+
+
+

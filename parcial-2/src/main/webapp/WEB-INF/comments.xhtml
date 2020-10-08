@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title></title>
+</h:head>
+    <h:body>
+        <h:form>
+            <h1>Consulta comentarios de un blog</h1>
+        <h:form id="Formlogin">
+            <p:inputText id="login_blog" binding="#{login}"></p:inputText>
+            <p:selectOneMenu value="#{blogBean.Login}" binding="#{login}" >
+                <f:selectItems value="#{blogBean.Login}" />
+            </p:selectOneMenu>
+        </h:form>
+
+        <p:commandButton update="Formlogin" value="Consultar" actionListener="#{blogBean.getData()}"></p:commandButton>
+
+            <h:panelGrid columns="1">
+            <h:outputLabel value="Nombre de usuario"/>
+            <p:outputLabel value="#{blogBean.user.name}"></p:outputLabel>
+            <h:outputLabel value="Apellido de usuario"/>
+            <p:outputLabel value="#{blogBean.user.lastName}"></p:outputLabel>
+            <h:outputLabel value="Login"/>
+            <p:outputLabel value="#{blogBean.user.login}"></p:outputLabel>
+
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

@@ -25,4 +25,25 @@
     <delete id="deleteAll">
         delete from BLOG
     </delete>
+
+    <select parameterType="map"  id='getComments' resultMap="CommentsResult">
+        select
+            b.title,
+            b.creation_date,
+            u.login,
+            u.name,
+            u.lasname,
+            c.content
+
+        FROM
+            BLOG as b JOIN u BLOG_USUARIO ON b.author LIKE u.login JOIN c BLOG_COMMENT ON c.blog_id LIKE b.id
+            <if test="login != null">
+                WHERE c.author == u.name
+            </if>
+
+
+
+
+    </select>
+
 </mapper>

@@ -25,12 +25,13 @@ import java.util.List;
  * @author hcadavid
  */
 public class Blog {
-    
-    private int id;
+
+	private static List<Comment> comments;
+	private int id;
     private User author;
     private String title;
     private Date creationDate;
-    List<Comment> comments;
+
     
     //el identificador es asignado por la base de datos,
     //por eso no se incluye en el constructor.
@@ -87,7 +88,7 @@ public class Blog {
 	}
 
 
-	public List<Comment> getComments() {
+	public static List<Comment> getComments() {
 		return comments;
 	}
 
